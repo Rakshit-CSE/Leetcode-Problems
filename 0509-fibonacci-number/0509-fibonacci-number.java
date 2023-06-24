@@ -1,10 +1,24 @@
 class Solution {
     public int fib(int n) {
-        if(n==0 || n==1)
-        {
-            return n;
+        if(n == 0) {
+            return 0;
         }
-        return fib(n-1)+fib(n-2);
+        if(n == 1) {
+            return 1;
+        }
+
+        int prevprev = 0;
+        int prev = 1;
+        int cur = 0;
+        
+        for(int i = 2; i <=n; i++) {
+            cur = prevprev + prev;
+            int temp = 0;
+            temp = prev;
+            prev = cur;
+            prevprev = temp;
+        }
+        return cur;
         
     }
 }
