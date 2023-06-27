@@ -9,6 +9,5 @@ class Solution {
             ans+=nums[j--]-nums[i++];
         }
         return ans; 
-
     }
 }
