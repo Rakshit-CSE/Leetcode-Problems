@@ -36,7 +36,7 @@ class Solution {
                     k--;
                 }
             }
-            while(i<nums.length-1 && nums[i]==nums[i+1])
+            while(i<nums.length-2 && nums[i]==nums[i+1])
             {
                 i++;
             }
