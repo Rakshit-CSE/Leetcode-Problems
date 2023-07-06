@@ -1,18 +1,18 @@
 class Solution {
     public int subarraySum(int[] nums, int k) {
-        int count=0;
-        for(int i=0;i<nums.length;i++)
-        {
-            int sum=0;
-            for(int j=i;j<nums.length;j++)
-            {
-                sum += nums[j];
-                if(sum==k)
-                {
-                    count++;
-                }
+        int prefixArr[] = new int [nums.length + 1];
+    prefixArr[0] = 0;
+    for(int i = 1; i <= nums.length; i++){
+        prefixArr[i] = prefixArr[i - 1] + nums[i - 1];
+    }
+    int ans = 0;
+    for(int i = 0; i < prefixArr.length; i++){
+        for(int j = i + 1; j < prefixArr.length; j++){
+            if(prefixArr[j] - prefixArr[i] == k){
+                ans++;
             }
         }
-        return count;
+    }
+    return ans;
     }
 }
