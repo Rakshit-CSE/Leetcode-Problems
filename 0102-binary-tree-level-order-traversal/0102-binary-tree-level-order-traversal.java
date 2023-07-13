@@ -36,7 +36,11 @@ class Solution {
     public static void fun(TreeNode node,int n,List<Integer> temp)
     {
         if(node==null) return;
-        if(n==1) temp.add(node.val);
+        if(n==1)
+        {
+            temp.add(node.val);
+            return;
+        }
         fun(node.left,n-1,temp);
         fun(node.right,n-1,temp);
     }
